@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/cadastro.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="home.html">
+          <img src="assets/img/telecall.png" alt="Logo" width="200">
+          <img src="assets/img/Logo CPAAS.png" alt="Logo"  width="80">
+      </div>
+  
+      <div class="btn">
+        <div class="login-wrapper">
+          <a href="index.html">
+            <img src="assets/img/user-circle-solid-24.png" class="login-image">
+  
+          </a>
+        </div>
+  
+        <div>
+          <input type="checkbox" class="checkbox" id="chk"/>
+          <label class="label" for="chk">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+           </label>
+        </div>   <!-- Seu código para a barra de navegação -->
+    </nav>
+
+    <div class="container">
+      <div class="form-image">
+        <img src="assets/img/undraw_sign_up_n6im.svg" alt="Imagem Cadastro"><!-- Seu código para a imagem do formulário -->
+      </div>
+      <div class="form">
+        <div class="form-content"></div>
+        <form
+          action="#"
+          id="registration-form"
+          onsubmit="return validarFormulario()"
+        >
+          <div class="form-header">
+            <div class="title">
+              <h1>Cadastre-se</h1>
+            </div>
+          </div>
+          <div class="input-group">
+              <div class="input-box">
+                <label for="firstname">Nome</label>
+                <input
+                  id="firstname"
+                 type="text"
+                 name="firstname"
+                 minlength="15"
+                  maxlength="60"
+                 required
+              />
+              
+            </div>
+          
+
+           <div class="input-box">
+            <label for="birthdate">Data de Nascimento</label>
+            <input id="birthdate" type="date" name="birthdate" required />
+           
+          </div>
+
+            <div class="input-box">
+            <label for="mothername">Nome Materno</label>
+            <input id="mothername" type="text" name="mothername" placeholder="Digite o nome da mãe">
+            
+          </div>
+
+          <div class="input-box">
+            <label for="cpf">CPF</label>
+            <input id="cpf" type="text" name="cpf" placeholder="Digite o CPF" maxlength="11" >
+            
+          </div><!-- Adicione outros campos conforme necessário -->
+
+          <div class="input-box">
+            <label for="cellphone">Telefone Celular</label>
+            <input
+              id="cellphone"
+              type="tel"
+              name="cellphone"
+              maxlength="15"
+              placeholder="(xx) xxxx-xxxx"
+              required
+            />
+            
+          </div>
+
+          <div class="input-box">
+            <label for="phone">Telefone Fixo (opcional)</label>
+            <input id="phone" type="tel" name="phone" maxlength="11"(xx) xxxx-xxxx">
+            
+          </div>
+
+          <div class="input-box">
+            <label for="cep">CEP</label>
+            <input id="cep" type="text" name="cep" placeholder="Digite o CEP" maxlength="8" >
+            
+          </div>
+
+          <div class="input-box">
+            <label for="rua">Rua</label>
+            <input id="rua" type="text" name="rua" placeholder="Digite a rua" >
+          </div>
+
+          <div class="input-box">
+            <label for="bairro">Bairro</label>
+            <input id="bairro" type="text" name="bairro" placeholder="Digite o bairro" >
+          </div>
+
+          <div class="input-box">
+            <label for="cidade">Cidade</label>
+            <input id="cidade" type="text" name="cidade" placeholder="Digite a cidade" >
+          </div>
+
+          <div class="input-box">
+            <label for="estado">Estado</label>
+            <input id="estado" type="text" name="estado" placeholder="Digite o estado" >
+          </div>
+
+          <div class="input-box">
+            <label for="email">Número</label>
+            <input id="number" type="text" name="number" placeholder="Digite o número" >
+          </div>
+
+          <div class="input-box">
+            <label for="email">Login</label>
+            <input id="login" type="text" name="login" placeholder="Digite o login" minlength="6" maxlength="6">
+            
+          </div>
+
+          <div class="input-box">
+            <label for="password">Senha</label>
+            <input
+              id="password"
+              type="password"
+              name="password"
+              minlength="8"
+              maxlength="20"
+              required
+            />
+
+          </div>
+
+          <div class="gender-inputs">
+            <div class="gender-title">
+              <h6>Gênero</h6>
+            </div>
+
+            <div class="gender-group">
+              <div class="gender-input" >
+                <input type="radio" id="female" name="gender" >
+                <label for="female">Feminino</label>
+              </div>
+
+              <div class="gender-input">
+                <input type="radio" id="male" name="gender">
+                <label for="male">Masculino</label>
+              </div>
+
+              <div class="gender-input">
+                <input type="radio" id="others" name="gender">
+                <label for="others">Todes</label>
+              </div>
+
+              <div class="gender-input">
+                <input type="radio" id="none" name="gender">
+                <label for="none">Prefiro não dizer</label>
+              </div>
+
+          <div class="continue-button">
+            <button type="submit">Continuar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/998c60ef77.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+
+   
+  </body>
+</html>
